@@ -1,6 +1,7 @@
 select
     m.orders_id,
     m.date_date,
+    m.margin,
     round(
         m.margin + sh.shipping_fee - sh.logcost - sh.ship_cost, 2
     ) as operational_margin,
