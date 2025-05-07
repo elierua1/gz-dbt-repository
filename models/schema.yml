@@ -119,14 +119,11 @@
            - unique:
               column_name: "(date_date || '-' || campaign_key)"
        - name: facebook
-         identifier: raw_gz_criteo
+         identifier: raw_gz_facebook
          description: the campaigns report for operation from Facebook
          columns:
            - name: date_date 
              description: date of the campaign
-             tests:
-               - unique
-               - not_null
            - name: paid_source
              description: source of the campaign
            - name: campaign_key
@@ -139,6 +136,9 @@
              description: impression of the campaign
            - name: click
              description: clicks of the campaign
+         tests:
+           - unique:
+              column_name: "(date_date || '-' || campaign_key)"
 
 # Intermediate tables
 
