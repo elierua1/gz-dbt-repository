@@ -228,7 +228,7 @@
 
 
    - name: int_campaigns
-     description: the detail all the campaigns aggregated
+     description: the detail all the campaigns from the four sources
      columns:
       - name: date_date 
         description: date of the campaign
@@ -259,6 +259,27 @@
      tests:
         - unique:
            column_name: "(date_date || '-' || campaign_key)"
+
+   - name: int_campaigns_day
+     description: the detail all the campaigns aggregated by day
+     columns:
+      - name: date_date 
+        description: date of the campaign
+        tests:
+          - unique
+          - not_null
+      - name: ads_cost
+        description: source of the campaign
+        tests:
+          - not_null
+      - name: ads_impression
+        description: the id of the campaign
+        tests:
+          - not_null
+      - name: ads_clicks
+        description: name of the campaign
+        tests:
+          - not_null
 
 # Mart
 
