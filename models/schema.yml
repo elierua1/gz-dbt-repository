@@ -55,7 +55,90 @@
              description: the cost of logistics for each order
            - name: ship_cost
              description: the cost of shipping for each order
-
+       - name: adwords
+         identifier: raw_gz_adwords
+         description: the campaigns report for operation from Adwords 
+         columns:
+           - name: date_date 
+             description: date of the campaign
+           - name: paid_source
+             description: source of the campaign
+           - name: campaign_key
+             description: the id of the campaign
+           - name: camPGN_name
+             description: name of the campaign
+           - name: ads_cost
+             description: cost of the campaign
+           - name: impression
+             description: impression of the campaign
+           - name: click
+             description: clicks of the campaign
+         tests:
+           - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+       - name: bing
+         identifier: raw_gz_bing
+         description: the campaigns report for operation from Bing
+         columns:
+           - name: date_date 
+             description: date of the campaign
+           - name: paid_source
+             description: source of the campaign
+           - name: campaign_key
+             description: the id of the campaign
+           - name: camPGN_name
+             description: name of the campaign
+           - name: ads_cost
+             description: cost of the campaign
+           - name: impression
+             description: impression of the campaign
+           - name: click
+             description: clicks of the campaign
+         tests:
+           - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+       - name: criteo
+         identifier: raw_gz_criteo
+         description: the campaigns report for operation from Criteo
+         columns:
+           - name: date_date 
+             description: date of the campaign
+           - name: paid_source
+             description: source of the campaign
+           - name: campaign_key
+             description: the id of the campaign
+           - name: camPGN_name
+             description: name of the campaign
+           - name: ads_cost
+             description: cost of the campaign
+           - name: impression
+             description: impression of the campaign
+           - name: click
+             description: clicks of the campaign
+         tests:
+           - unique:
+              column_name: "(date_date || '-' || campaign_key)"
+       - name: facebook
+         identifier: raw_gz_criteo
+         description: the campaigns report for operation from Facebook
+         columns:
+           - name: date_date 
+             description: date of the campaign
+             tests:
+               - unique
+               - not_null
+           - name: paid_source
+             description: source of the campaign
+           - name: campaign_key
+             description: the id of the campaign
+           - name: camPGN_name
+             description: name of the campaign
+           - name: ads_cost
+             description: cost of the campaign
+           - name: impression
+             description: impression of the campaign
+           - name: click
+             description: clicks of the campaign
 
 # Intermediate tables
 
