@@ -226,6 +226,40 @@
        - name: logcost
          description: the logistics cost of the order
 
+
+   - name: int_campaigns
+     description: the detail all the campaigns aggregated
+     columns:
+      - name: date_date 
+        description: date of the campaign
+      - name: paid_source
+        description: source of the campaign
+        tests:
+          - not_null
+      - name: campaign_key
+        description: the id of the campaign
+        tests:
+          - not_null
+      - name: campaign_name
+        description: name of the campaign
+        tests:
+          - not_null
+      - name: ads_cost
+        description: cost of the campaign
+        tests:
+          - not_null
+      - name: impression
+        description: impression of the campaign
+        tests:
+          - not_null
+      - name: click
+        description: clicks of the campaign
+        tests:
+          - not_null
+     tests:
+        - unique:
+           column_name: "(date_date || '-' || campaign_key)"
+
 # Mart
 
    - name: finance_days
